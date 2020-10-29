@@ -1,8 +1,6 @@
 #!/bin/bash
 
-
-file_name="fifo_jy"
-
+echo "this is example"
 
 if [ -p $file_name ]; then
   echo ^d to exit
