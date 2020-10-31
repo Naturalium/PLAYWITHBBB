@@ -1,14 +1,18 @@
 #include <unistd.h>
 #include <signal.h>
 #include <limits.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-int nc;
+unsigned int nc;
 void alarm_action(int);
 
 int main()
 {
-  int filedes[2];
+  int filedes[2], check;
   char msg = 'A';
+  char buffer;
 
   struct sigaction act;
   act.sa_handler = alarm_action;
@@ -27,8 +31,9 @@ int main()
   alarm(1);
   while(1)
   {
-    write(filedes[1], &msg, 1);
-    nc++;
+    check = write(filedes[1], &msg, 1);
+    if(check != -1)
+     nc++;
   }
 
 
