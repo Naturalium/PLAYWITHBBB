@@ -15,11 +15,16 @@ int main()
   if((ipaddr1 = inet_addr(valid)) == -1)
     printf("invalid: %s\n", valid);
   else
+  {
+
     printf("valid: %d. %d. %d. %d\n", 
 	    (ipaddr1 >> 0)    &	  0xFF,
 	    (ipaddr1 >> 8)    &	  0xFF,
 	    (ipaddr1 >> 16)   &	  0xFF,
 	    (ipaddr1 >> 24)   &	  0xFF);
+    printf("valid (Decimal): %d\n", ipaddr1);
+  }
+
 
   ipaddr2.s_addr = ipaddr1;
 
