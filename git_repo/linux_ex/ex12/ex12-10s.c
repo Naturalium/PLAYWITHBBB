@@ -54,7 +54,7 @@ int main()
 
     printf("accepted \n");
     while(recv(sockfd_connect, &c, 1, 0) > 0)
-      secv(sockfd_connect, &c, 1, 0);
+      send(sockfd_connect, &c, 1, 0);
 
     printf("close(sockfd_connect)\n");
     close(sockfd_connect);
