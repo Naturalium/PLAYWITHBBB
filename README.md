@@ -1,5 +1,7 @@
 #공부하는 곳
 비글본 블랙을 이용한 리눅스 CE
+예제 끝
+
 
 발생한 문제 on Beaglebone Black
 
